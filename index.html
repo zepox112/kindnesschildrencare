@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="sw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kindness Children Care | Arusha</title>
+
+    <meta name="description"
+        content="Kindness Children Care - Helping orphans and needy children in Arusha, Tanzania through education and love.">
+    <meta name="author" content="Reverend Yohana Y. Mwampamba">
+
+    <link rel="icon" type="image/jpeg" href="./logo.jpg">
+    <link rel="apple-touch-icon" href="./logo.jpg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --dark: #0a0a0a;
+            --red: #ff3e3e;
+            --red-hover: #d32f2f;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.05);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        /* --- NAVIGATION & MENU LIQUID STYLES --- */
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* Jina la Website (Logo Text) */
+        .logo-text {
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            /* Inatoa nafasi ili lisijibane */
+            text-transform: uppercase;
+            color: #ffffff;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        /* Mpangilio wa Menu (Home, About, etc.) */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            /* Nafasi kati ya neno na neno */
+        }
+
+        /* Maneno ya Menu kabla ya kuguswa */
+        .nav-item {
+            text-decoration: none;
+            color: #666666;
+            /* Rangi ya kijivu inayotulia */
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 10px 15px;
+            display: inline-block;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        /* --- THE ZOOM EFFECT (Inatokea neno likiguswa) --- */
+        .nav-item.active {
+            color: #ffffff !important;
+            /* Inakuwa nyeupe kabisa */
+            transform: scale(1.25);
+            /* Neno linajizoom kama lipo ndani ya maji */
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+            /* Mng'ao wa kioo */
+            z-index: 10000;
+        }
+
+        /* Tone la Maji Linalotembea */
+        #liquid-capsule {
+            position: fixed;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 9999;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 2px solid rgba(255, 255, 255, 0.8);
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow:
+                inset -5px -5px 12px rgba(255, 255, 255, 0.1),
+                0 15px 35px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        /* Zoom Effect kwa Maneno (Nav Items Pekee) */
+        .nav-item {
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item.active {
+            color: #ffffff !important;
+            transform: scale(1.25);
+            /* Zoom ya kioo */
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Mobile Adjustments (Kwa ajili ya Simu) */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 15px;
+            }
+
+            .nav-item {
+                font-size: 0.75rem;
+                padding: 5px 10px;
+            }
+
+            .logo-text {
+                font-size: 0.9rem;
+                letter-spacing: 1px;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigasi */
+        header {
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--glass);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .logo-text {
+            font-weight: 900;
+            font-size: 1.2rem;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+        }
+
+        .logo-text span {
+            color: var(--red);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+
+            /* BADILISHA HAPA */
+            font-family: 'Poppins', sans-serif;
+            /* Hii ndio font mpya */
+            font-size: 1rem;
+            /* Unaweza kuongeza ukubwa hapa */
+            font-weight: 700;
+            /* Inafanya maneno yawe mazito (Bold) */
+            text-transform: uppercase;
+            /* Inafanya yawe herufi kubwa yote */
+            letter-spacing: 1px;
+            /* Inatenganisha herufi kidogo ipendeze */
+
+            transition: 0.3s;
+        }
+
+        /* Pia badilisha ile Logo (KINDNESS.CARE) */
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .logo-image img {
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--red);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: #000;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            transform: scale(1.1);
+        }
+
+        .slide.active {
+            opacity: 0.5;
+            transform: scale(1);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 10;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mobile-money-box {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .m-money-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            min-width: 250px;
+            transition: 0.3s;
+        }
+
+        .m-money-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .provider {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 900;
+            color: #ffcccc;
+            margin-bottom: 5px;
+        }
+
+        .phone-number {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        .owner-name {
+            display: block;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Bento Grid Style */
+        .section {
+            padding: 100px 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .glass-card {
+            background: var(--glass);
+            padding: 40px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--red);
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+        }
+
+        .col-8 {
+            grid-column: span 8;
+        }
+
+        .col-4 {
+            grid-column: span 4;
+        }
+
+        .col-6 {
+            grid-column: span 6;
+        }
+
+        .glass-container {
+            display: flex;
+            justify-content: center;
+            padding: 50px;
+            background: transparent;
+            /* Itachukua rangi ya website yako */
+        }
+
+        .whatsapp-water {
+            position: fixed;
+            width: 65px;
+            height: 65px;
+            bottom: 30px;
+            right: 30px;
+
+            /* Water Style / Glassmorphism */
+            background: rgba(255, 255, 255, 0.1);
+            /* Inaruhusu rangi za nyuma kupenya */
+            backdrop-filter: blur(10px);
+            /* Inatengeneza muonekano wa maji/kioo */
+            -webkit-backdrop-filter: blur(10px);
+
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .whatsapp-water svg {
+            fill: rgba(255, 255, 255, 0.8);
+            /* Icon iwe nyeupe iliyofifia kidogo */
+            transition: 0.3s;
+        }
+
+        /* Hover Effect - Maji yanabadilika rangi kidogo */
+        .whatsapp-water:hover {
+            background: rgba(37, 211, 102, 0.2);
+            /* Inapata rangi ya kijani hafifu */
+            border: 1px solid rgba(37, 211, 102, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.2);
+        }
+
+        .whatsapp-water:hover svg {
+            fill: #25d366;
+            /* Icon inakuwa ya kijani kamili ukiigusa */
+            filter: drop-shadow(0 0 8px #25d366);
+        }
+
+        /* Animation ya 'Ripple' - Kama tone la maji */
+        @keyframes water-pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+            }
+        }
+
+        .whatsapp-water {
+            animation: water-pulse 2s infinite;
+        }
+
+        .glass-orb {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            /* Muonekano wa Glass */
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+
+            /* Hii inahakikisha kila kitu ndani kinabaki kuwa duara */
+            overflow: hidden;
+
+            box-shadow:
+                inset 0 10px 30px rgba(255, 255, 255, 0.3),
+                0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .orb-logo {
+            width: 100%;
+            /* Inajaza duara lote */
+            height: 100%;
+            object-fit: cover;
+            /* Inahakikisha logo inajaa bila kuacha pembe za square */
+            border-radius: 50%;
+            /* Inailazimisha logo iwe duara */
+
+            /* Inafanya logo ionekane kama ipo ndani ya maji kidogo */
+            opacity: 0.9;
+            filter: brightness(1.1);
+        }
+
+        /* Donate Box */
+        .donate-container {
+            background: linear-gradient(135deg, #ff3e3e 0%, #800000 100%);
+            padding: 60px;
+            border-radius: 40px;
+            text-align: center;
+            grid-column: span 12;
+            box-shadow: 0 20px 50px rgba(255, 62, 62, 0.2);
+        }
+
+        /* Buttons */
+        .btn-main {
+            background: var(--red);
+            color: white;
+            padding: 16px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: var(--transition);
+            border: none;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-content-container {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 80%;
+        }
+
+        .modal-content {
+            border-radius: 20px;
+            max-width: 100%;
+            max-height: 70vh;
+            border: 2px solid var(--red);
+        }
+
+        #caption {
+            margin-top: 20px;
+            color: white;
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .close {
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 62, 62, 0.4);
+            background: var(--red-hover);
+        }
+
+        /* Gallery Styles */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            padding: 0;
+            /* Kuondoa padding ya glass-card kwa ajili ya picha */
+            overflow: hidden;
+            height: 300px;
+            cursor: pointer;
+        }
+
+        /* --- ZEPOX LIQUID 3D UPGRADE --- */
+        :root {
+            --dark: #0a0a0a;
+            --liquid-glow: rgba(255, 255, 255, 0.7);
+            /* Mwanga wa kioo */
+            --accent: #ffffff;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        /* Kadi ya 3D kwa ajili ya Viongozi na Habari */
+        .glass-card {
+            background: var(--glass);
+            border-radius: 40px !important;
+            /* Kona za duara zaidi */
+            border-top: 2px solid var(--liquid-glow) !important;
+            border-left: 1px solid rgba(255, 255, 255, 0.2) !important;
+            box-shadow:
+                inset -5px -5px 15px rgba(255, 255, 255, 0.05),
+                0 20px 40px rgba(0, 0, 0, 0.5) !important;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        /* Hover effect kwa maneno (Zoom) */
+        .nav-item-liquid {
+            display: inline-block;
+            transition: transform 0.3s ease, color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-item-liquid:hover {
+            transform: scale(1.15);
+            color: #fff !important;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Picha za Viongozi ziwe na Glow ya Maji */
+        .leader-img-container {
+            border: 2px solid var(--liquid-glow) !important;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Button ya Kisasa (Capsule Shape) */
+        .btn-main {
+            background: rgba(255, 255, 255, 0.1) !important;
+            border: 1.5px solid var(--liquid-glow) !important;
+            backdrop-filter: blur(10px);
+            border-radius: 50px !important;
+            color: #fff !important;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .leader-card {
+            text-align: center;
+            padding: 30px;
+            transition: 0.4s ease;
+        }
+
+        .leader-card:hover {
+            border-color: var(--red);
+            transform: scale(1.02);
+        }
+
+        .leader-img-container {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--red);
+        }
+
+        .leader-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .leader-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--white);
+        }
+
+        .leader-card p {
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Story Section Styles */
+        .story-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .story-image {
+            position: relative;
+            height: 400px;
+            border-radius: 40px 40px 0 0;
+            overflow: hidden;
+            border: 2px solid var(--glass);
+        }
+
+        .story-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .story-overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 40px;
+            background: linear-gradient(transparent, var(--dark));
+            text-align: center;
+        }
+
+        .story-card {
+            border-radius: 0 0 40px 40px !important;
+            margin-top: -2px;
+            padding: 50px !important;
+            text-align: justify;
+        }
+
+        .story-p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #e0e0e0;
+        }
+
+        .milestone {
+            background: rgba(255, 62, 62, 0.1);
+            padding: 15px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            font-weight: bold;
+            border: 1px dashed var(--red);
+        }
+
+        .current-status {
+            background: var(--glass);
+            padding: 20px;
+            border-left: 5px solid #00ff88;
+            margin: 30px 0;
+            font-style: italic;
+        }
+
+        .story-signature {
+            margin-top: 40px;
+            text-align: right;
+            border-top: 1px solid var(--glass);
+            padding-top: 20px;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: -100%;
+            /* Inaanza ikiwa imejificha chini */
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, var(--red), transparent);
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            transition: bottom 0.4s ease;
+        }
+
+        /* Hover Effect - Picha inakuwa kubwa na maneno yanatokea */
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .modal {
+            display: none;
+            /* Inaanza ikiwa imejificha */
+            position: fixed;
+            z-index: 9999;
+            /* Namba kubwa ili iwe juu ya kila kitu */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            /* Giza nene la nyuma */
+            backdrop-filter: blur(10px);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .modal-content-container {
+            text-align: center;
+            max-width: 90%;
+        }
+
+        .modal-img {
+            max-height: 70vh;
+            max-width: 100%;
+            border-radius: 20px;
+            border: 3px solid var(--red);
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.7);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10000;
+        }
+
+        #caption {
+            margin-top: 20px;
+            padding: 20px;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            bottom: 0;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--red);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        /* Contact Icons */
+        .icon-box {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            padding: 50px 5%;
+            text-align: center;
+            background: #050505;
+            border-top: 1px solid var(--glass);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+
+            .col-8,
+            .col-4,
+            .col-6 {
+                grid-column: span 12;
+            }
+
+            nav {
+                display: none;
+            }
+
+            /* Unaweza kuongeza Mobile Menu hapa baadaye */
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .section {
+                padding: 60px 5%;
+            }
+        }
+    </style>
+</head>
+<div id="moreInfoModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2 style="color: var(--red);">About us</h2>
+        <br>
+        <p style="color: #333; line-height: 1.8;">
+            We are a non-profit organization registered in Tanzania dedicated to rescuing orphans, street children, and
+            children with disabilities from suffering and poverty. By providing education and holistic support, we
+            revive the dreams and ambitions of those whose futures were threatened by parental loss or harsh life
+            calamities.
+
+            We believe these children are invaluable to our nation’s future if effectively empowered. KINDNESS CHILDREN
+            CARE warmly invites volunteers and donors worldwide to join our movement. Let us not isolate this
+            generation; show your compassion today and be a blessing to their lives. Under our Board of Directors, we
+            remain committed to transforming the lives of vulnerable children living in distress both on the streets and
+            in homes.
+        </p>
+    </div>
+</div>
+
+<style>
+    /* Mitindo ya Modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(8px);
+    }
+
+    /* Mitindo ya Benki */
+    .bank-card {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 15px;
+        margin-bottom: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    .bank-card p {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-top: 5px;
+        color: white;
+    }
+
+    /* Mobile Money Items */
+    .m-money-item {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 15px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .phone-number {
+        font-size: 1.3rem;
+        font-weight: 900;
+        color: white;
+        display: block;
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 10% auto;
+        padding: 40px;
+        border-radius: 20px;
+        width: 80%;
+        max-width: 700px;
+        color: #333;
+        position: relative;
+        animation: slideIn 0.4s ease;
+    }
+
+    /* Mitindo ya Ticker (Sliding News) */
+    .ticker-container {
+        background: #000;
+        /* Background nyeusi ili maandishi meupe na mekundu yang'ae */
+        border-top: 2px solid var(--red);
+        border-bottom: 2px solid var(--red);
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        margin-top: 60px;
+        /* Inahakikisha haifunikwi na header */
+    }
+
+    .ticker-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    .ticker-badge {
+        background: var(--red);
+        color: white;
+        padding: 0 20px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-weight: 900;
+        font-size: 0.8rem;
+        position: absolute;
+
+        /* BADILISHA HAPA: Ikiwa 0 inakaa mwisho kabisa kushoto. 
+       Iongeze iwe 10px au 20px ili isogee kulia kidogo */
+        left: 00px;
+
+        z-index: 2;
+        border-radius: 5px;
+        /* Unaweza kuongeza mduara kidogo ipendeze */
+        box-shadow: 10px 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .ticker-text {
+        display: inline-block;
+        padding-left: 30%;
+        /* Inaanza nje ya screen upande wa kulia */
+        animation: ticker-slide 35s linear infinite;
+        /* 25s ni kasi ya kuteleza */
+    }
+
+    .ticker-text p {
+        display: inline-block;
+        color: white;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .ticker-text strong {
+        color: var(--red);
+    }
+
+    #notice-board {
+        display: block;
+        clear: both;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .horizontal-layout {
+        display: flex;
+        flex-wrap: nowrap;
+        /* Inazuia kadi zisishuke chini kwenye screen kubwa */
+        gap: 15px;
+        /* Inazisogeza karibu zaidi */
+        justify-content: space-between;
+        align-items: stretch;
+    }
+
+    .flex-item {
+        flex: 1;
+        /* Inazifanya kadi zote ziwe na upana sawa */
+        margin: 0;
+        /* Inatibu ukaribu wa kadi */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    /* Kwa ajili ya Simu (Mobile) */
+    @media (max-width: 900px) {
+        .horizontal-layout {
+            flex-wrap: wrap;
+            /* Kwenye simu zitarudi kukaa wima ili zisomeke */
+        }
+
+        .flex-item {
+            min-width: 100%;
+        }
+    }
+
+    .digital-board {
+        background: rgba(30, 30, 30, 0.6);
+        /* Iwe nzito kidogo ili ionekane */
+        border: 2px solid #ff3e3e;
+        border-radius: 30px;
+        padding: 40px;
+        max-width: 900px;
+        margin: 20px auto;
+        backdrop-filter: blur(15px);
+        box-shadow: 0 0 30px rgba(255, 62, 62, 0.2);
+        text-align: center;
+    }
+
+    .live-dot {
+        width: 12px;
+        height: 12px;
+        background: #ff3e3e;
+        border-radius: 50%;
+        animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+        0% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0.3;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .glow-text {
+        color: white;
+        font-size: 2rem;
+        text-shadow: 0 0 10px #ff3e3e;
+        margin-bottom: 15px;
+    }
+
+    /* Animation ya kuteleza kutoka kulia kwenda kushoto */
+    @keyframes ticker-slide {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    /* Kusimamisha maandishi mtu akigusa na Mouse */
+    .ticker-container:hover .ticker-text {
+        animation-play-state: paused;
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .close-btn {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        font-size: 30px;
+        font-weight: bold;
+        cursor: pointer;
+        color: #888;
+    }
+
+    .close-btn:hover {
+        color: var(--red);
+    }
+</style>
+
+<script>
+    function openModal() {
+        document.getElementById("moreInfoModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("moreInfoModal").style.display = "none";
+    }
+
+    // Ikifungwa mtu akibonyeza pembeni ya box
+    window.onclick = function (event) {
+        let modal = document.getElementById("moreInfoModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo-text">KINDNESS <span>CHILDREN</span> CARE</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about us">About us</a></li>
+                    <li><a href="#story">Our story</a></li>
+                    <li><a href="#leaders">Our Leaders</a></li>
+                    <li><a href="#donate">Donate</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact-info">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="logo-image">
+                <img src="./logo.jpg" alt="Logo">
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="slider">
+            <div class="slide active" style="background-image: url('fade1.jpg');"></div>
+            <div class="slide" style="background-image: url('fade2.jpg');"></div>
+            <div class="slide" style="background-image: url('fade3.jpg');"></div>
+            <div class="slide" style="background-image: url('fade4.jpg');"></div>
+            <div class="slide" style="background-image: url('fade5.jpg');"></div>
+            <div class="slide" style="background-image: url('fade6.jpg');"></div>
+        </div>
+        <div class="hero-content">
+            <h1>GREAT SUPPORT <br><span style="color:var(--red)">GREAT LOVE.</span></h1>
+            <p style="font-size: 1.2rem; opacity: 0.8; margin-bottom: 30px;">
+                Kindness Children Care welcomes charity support from individuals, groups, and welfare organizations with
+                the sense of making the world a better living place for children who feel rejected and abandoned.
+
+
+            </p>
+            <a href="#donate" class="btn-main">Donate for Future</a>
+        </div>
+    </section>
+    <section id="latest" class="ticker-container">
+        <div class="ticker-wrapper">
+            <div class="ticker-badge">LATEST NEWS</div>
+            <div class="ticker-text">
+                <p>
+                    🚨 SCHOOLS HAVE REOPENED: Currently, our center, Kindness Children Care, is facing a critical need
+                    for Food and School Fees for our 63 children.&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp; 📖
+                    EDUCATION: We are proud to raise
+                    children from Nursery all the way to University level; help us make their dreams come true today!
+                    &nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;
+                    🙏 GRATITUDE: We sincerely thank our leaders, led
+                    by our Director, Yohana Yisambi
+                    Mwampamba.
+                    🚨 **SHULE ZIMEFUNGULIWA:** Kwa sasa kituo chetu cha **Kindness Children Care** kinakabiliwa na
+                    uhitaji mkubwa wa **Chakula na Ada** kwa ajili ya watoto wetu 63.
+                    &nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;
+                    📖 **ELIMU:** Tunajivunia kulea watoto kuanzia Nursery hadi Chuo Kikuu, tusaidie kutimiza ndoto zao
+                    leo!
+                    &nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;
+                    🙏 **SHUKRANI:** Tunawashukuru viongozi wetu wakiongozwa na Director **Yohana Yisambi Mwampamba**.
+
+                </p>
+            </div>
+
+        </div>
+
+
+    </section>
+    <section id="notice-board" class="section">
+        <div class="digital-board">
+            <div class="board-header">
+                <div class="live-dot"></div>
+                <h3>CENTRE NOTICE BOARD</h3>
+            </div>
+            <div class="board-body">
+                <h2 class="glow-text">BUILDING FUNDRAISER</h2>
+                <p class="announcement-text">
+                    <strong>Kindness Children Care</strong> invites you to a fundraiser for the construction of our
+                    new center.
+                    Our goal is to build a dining hall and dormitories that will serve <strong>150</strong> children.
+                    Currently, we care for 63 children, and this expansion will allow us to save the lives of many more
+                    children from the streets.
+                </p>
+                <div class="board-footer">
+                    <span class="status-tag">Status: In Progress</span>
+                    <span class="location-tag">Location: Arusha, Tanzania</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about us" class="section">
+        <div class="horizontal-layout">
+            <div class="glass-card flex-item">
+                <h2 class="red-text">ABOUT US</h2>
+                <p>
+                    KINDNESS CHILDREN CARE is a non-profit organization established in Tanzania aimed at rescuing needy
+                    and hopeless children...
+                </p>
+                <br>
+                <a href="javascript:void(0)" class="red-text" onclick="openModal()"
+                    style="font-weight: bold; text-decoration: none;">Read More &rarr;</a>
+            </div>
+
+            <div class="glass-card flex-item">
+                <h2 class="red-text">OUR MISSION</h2>
+                <p>
+                    We are looking forward to building a home that can accommodate <strong>150 children</strong>.
+                    Currently, the center has 63 children living in a small home.
+                </p>
+            </div>
+
+            <div class="glass-card flex-item">
+                <h2 class="red-text">OUR VISION</h2>
+                <p>
+                    To provide education and support children's dreams so as to meet their careers that were previously
+                    lost due to parental deaths.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="story" class="section">
+        <div class="story-container">
+            <div class="story-image">
+                <img src="story.jpg" alt="Our Journey - Kindness Children Care">
+                <div class="story-overlay">
+                    <h2 class="glow-text">OUR STORY 📖</h2>
+                </div>
+            </div>
+
+            <div class="glass-card story-card">
+                <h3 class="red-text">Short History – Kindness Children Care ❤️</h3>
+
+                <p class="story-p">
+                    My calling to help orphans and street children started while I was a pastor. I used my little salary
+                    to educate, feed, and teach kids how to work hard. I provided clothes, books, and school fees while
+                    teaching them spiritual respect for God. 🕊️
+                </p>
+
+                <p class="story-p">
+                    Seeing many projects fail due to poor administration, I told my wife <strong>Christina</strong> and
+                    my children <strong>Fadhili, Duncan, and Kathleen</strong> that I wanted to start an independent
+                    project to help children in a true and open way. 🤝
+                </p>
+
+                <div class="milestone">
+                    <span>🗓️ Started: 2009</span>
+                    <span>✅ Registered: 24th Nov 2012</span>
+                </div>
+
+                <p class="story-p">
+                    The journey was hard. I even slept at the bus stand in Dar es Salaam for five months with street
+                    children because I couldn't afford a guest house. I reached out to <strong>President Jakaya Mrisho
+                        Kikwete</strong>, who invited me for lunch at the State House and promised support. 🇹🇿
+                </p>
+
+                <p class="story-p">
+                    I will never forget when the Prime Minister’s wife, <strong>Mama Tunu Pinda</strong>, donated
+                    <strong>$500</strong>. That money helped us get registration and officially start <strong>KINDNESS
+                        CHILDREN CARE</strong>. 💰✨
+                </p>
+
+                <div class="current-status">
+                    <p>🌟 Today, we are growing faster! We have children in Baby Class, Primary, Secondary, and Form
+                        Five. All are in school! 🎓</p>
+                </div>
+
+                <div class="story-signature">
+                    <p><strong>By Reverend Yohana Y. Mwampamba</strong></p>
+                    <p class="red-text">Founder and Director</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="leaders" class="section">
+        <h2 class="section-title">Our <span class="red-text">Leaders</span></h2>
+        <div class="bento-grid">
+            <div class="glass-card leader-card">
+                <div class="leader-img-container">
+                    <img src="leader1.jpg" alt="Rev. Yohana Y. Mwampamba">
+                </div>
+                <h3>Yohana Yisambi Mwampamba</h3>
+                <p class="red-text">Director and Founder</p>
+            </div>
+
+            <div class="glass-card leader-card">
+                <div class="leader-img-container">
+                    <img src="leader2.jpg" alt="Christina Yohana Mwampamba">
+                </div>
+                <h3>Christina Yohana Mwampamba</h3>
+                <p class="red-text">Deputy Director</p>
+            </div>
+
+            <div class="glass-card leader-card">
+                <div class="leader-img-container">
+                    <img src="leader3.jpg" alt="John Silas Mollel">
+                </div>
+                <h3>John Silas Mollel</h3>
+                <p class="red-text">Chairperson of the Board</p>
+            </div>
+
+            <div class="glass-card leader-card">
+                <div class="leader-img-container">
+                    <img src="leader4.jpg" alt="Marry Kennedy Zephania">
+                </div>
+                <h3>Marry Kennedy Zephania</h3>
+                <p class="red-text">Social Worker</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="donate" class="section">
+        <div class="donate-container">
+            <h2 style="color:white; margin-bottom:20px;">Support Our Mission</h2>
+            <p style="color:rgba(255,255,255,0.9); margin-bottom:30px;">
+                Kindness Children Care cares for 63 children from nursery to university level.
+                Your contribution helps us build a home for 150 children.
+            </p>
+
+            <div class="bank-card">
+                <span class="provider">KCB BANK</span>
+                <span class="owner-name">KINDNESS CHILDREN CARE</span>
+                <p>TZS: 3300873169 | USD: 300873177</p>
+            </div>
+
+            <div class="bank-card">
+                <span class="provider">NMB BANK</span>
+                <span class="owner-name">KINDNESS CHILDREN CARE</span>
+                <p>TZS: 40810148006 | USD: 40810148007</p>
+            </div>
+            <div class="m-money-item">
+                <h2 style="color:white; margin-bottom:20px;">LIPA NUMBER TANZANIA</h2>
+                <div class="mobile-money-box">
+                    <div class="m-money-item">
+                        <span class="provider">VODACOM M PESA</span>
+                        <span class="phone-number">0766 566 156</span>
+                        <span class="phone-Name">KINDNESS CHILDREN CARE</span>
+                    </div>
+                    <div class="m-money-item">
+                        <span class="provider">VODACOM LIPA NUMBER</span>
+                        <span class="phone-number">5811 2911</span>
+                        <span class="phone-Name">KINDNESS CHILDREN CARE</span>
+                    </div>
+                    <div class="m-money-item">
+                        <span class="provider">AIRTEL LIPA NUMBER</span>
+                        <span class="phone-number">139758319</span>
+                        <span class="phone-Name">KINDNESS CHILDREN CARE</span>
+                    </div>
+
+                    <div class="m-money-item">
+                        <span class="provider">TIGO LIPA NUMBER</span>
+                        <span class="phone-number">45448194</span>
+                        <span class="phone-Name">KINDNESS CHILDREN CARE</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <section id="gallery" class="section">
+        <h2 class="section-title">Our <span class="red-text">Gallery</span></h2>
+        <p style="text-align:center; margin-bottom:40px; opacity:0.8;">Pictures of our daily life and activities at the
+            center.</p>
+
+        <div class="gallery-grid">
+            <div class="gallery-item glass-card">
+                <img src="gal1.jpg" alt="Children playing">
+                <div class="gallery-overlay">Education</div>
+            </div>
+            <div class="gallery-item glass-card">
+                <img src="gal2.jpg" alt="Lunch time">
+                <div class="gallery-overlay">Daily Meals</div>
+            </div>
+            <div class="gallery-item glass-card">
+                <img src="gal3.jpg" alt="Group photo">
+                <div class="gallery-overlay">Our Family</div>
+            </div>
+            <div class="gallery-item glass-card">
+                <img src="gal4.jpg" alt="Study session">
+                <div class="gallery-overlay">Dreams</div>
+            </div>
+            <div class="gallery-item glass-card">
+                <img src="gal5.jpg" alt="Outreach">
+                <div class="gallery-overlay">Community</div>
+            </div>
+            <div class="gallery-item glass-card">
+                <img src="gal6.jpg" alt="Celebration">
+                <div class="gallery-overlay">Joy</div>
+            </div>
+        </div>
+    </section>
+    <section id="contact-info" class="section">
+        <div class="bento-grid">
+            <div class="glass-card col-4" style="text-align: center;">
+                <span class="icon-box">📍</span>
+                <h4>Reach Us</h4>
+                <p>Kijenge Juu St., Kimandolu.<br>Arusha, Tanzania</p>
+            </div>
+            <div class="glass-card col-4" style="text-align: center;">
+                <span class="icon-box">📞</span>
+                <h4>Call Us</h4>
+                <p>+255 744 000 026<br>+255 764 746 262</p>
+            </div>
+            <div class="glass-card col-4" style="text-align: center;">
+                <span class="icon-box">✉️</span>
+                <h4>Email Us</h4>
+                <p>kindnesschildrencare@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="glass-container">
+            <div class="glass-orb">
+                <img src="logo.jpg" alt="Kindness Logo" class="orb-logo">
+            </div>
+        </div>
+        <p>&copy; 2026 Kindness Children Care. All Rights Reserved.</p>
+        <p style="font-size: 0.8rem; opacity: 0.5; margin-top: 10px;">Designed by Kindness Children Care Arusha</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(nextSlide, 5000);
+    </script>
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content-container">
+            <img id="imgInsideModal" class="modal-img">
+            <div id="caption" class="glass-card"></div>
+        </div>
+    </div>
+
+    <script>
+        // Kodi ya JavaScript niliyokupa iweke hapa
+    </script>
+    <a href="https://wa.me/255744000026?text=Hello%20Kindness%20Children%20Care" class="whatsapp-water" target="_blank">
+        <svg viewBox="0 0 448 512" width="30" height="30">
+            <path
+                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.5-11.3 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.7 5.5-9.4 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+        </svg>
+    </a>
+
+</body>
+
+</html>
