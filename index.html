@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sw">
+                                                     <html lang="sw">
 
 <head>
     <meta charset="UTF-8">
@@ -21,7 +21,7 @@
 
         :root {
             --dark: #0a0a0a;
-            --red: #ff3e3e;
+            --red: #ff3e3e;     
             --red-hover: #d32f2f;
             --white: #ffffff;
             --glass: rgba(255, 255, 255, 0.05);
@@ -372,6 +372,92 @@
             padding: 50px;
             background: transparent;
             /* Itachukua rangi ya website yako */
+        }
+
+        /* Inazuia logo na menu zisipandane kwenye simu */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 10px 3%;
+                flex-wrap: wrap;
+                /* Inaruhusu vitu kushuka chini ikibidi */
+            }
+
+            .logo-text {
+                font-size: 0.8rem;
+                /* Inapunguza ukubwa wa maandishi ya logo */
+                max-width: 60%;
+            }
+
+            nav {
+                display: none;
+                /* Inaficha menu ya kawaida kwenye simu */
+            }
+
+            .logo-image img {
+                height: 35px;
+                width: 35px;
+            }
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+        }
+
+        /* Hii ndio muhimu kwa simu */
+        @media (max-width: 768px) {
+
+            .col-8,
+            .col-6,
+            .col-4 {
+                grid-column: span 12 !important;
+                /* Inazifanya zote ziwe mstari mmoja mmoja */
+            }
+
+            .glass-card {
+                padding: 20px;
+                /* Inapunguza nafasi za ndani ili kadi isichukue nafasi kubwa */
+            }
+        }
+
+        .horizontal-layout {
+            display: flex;
+            flex-wrap: wrap;
+            /* BADILISHA HAPA: Kutoka nowrap kwenda wrap */
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .flex-item {
+                flex: 1 1 100%;
+                /* Inahakikisha kila box linachukua upana wote kwenye simu */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .modal-content {
+                width: 95%;
+                /* Inachukua karibu screen nzima */
+                margin: 20% auto;
+                padding: 20px;
+            }
+
+            .modal-content p {
+                font-size: 0.9rem;
+                /* Maandishi madogo kidogo yasichoshe kusoma */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .ticker-badge {
+                padding: 0 10px;
+                font-size: 0.7rem;
+            }
+
+            .ticker-text p {
+                font-size: 0.85rem;
+            }
         }
 
         .whatsapp-water {
